@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <script>
+        function toggle(button){
+            if (document.getElementById("pr").value=="PAUSE")
+                {document.getElementById("pr").value="RESUME";}
+            else if (document.getElementById("pr").value=="RESUME")
+                {document.getElementById("pr").value="PAUSE";}
+        }
+    </script>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload the file</button>
+    <!--<input type="button" id="pr" value="PAUSE" onclick="toggle(this)"/> -->
+</form>
+</body>
+</html>
